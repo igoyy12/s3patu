@@ -21,7 +21,7 @@ const Pesanan = ({ pesanan, onDelete }) => {
         <div className="flex w-[40%] flex-col justify-between align-middle gap-4">
           <div className="border-[2px] gap-2 flex  justify-center border-black p-2">
             <h1 className="text-center text-xl ">Total Harga :</h1>
-            <h1 className="text-center text-xl ">{`Rp.60000`}</h1>
+            <h1 className="text-center text-xl ">{`Rp.75000`}</h1>
           </div>
 
           <div className="bg-gray-500 h-8 rounded-md flex text-center">

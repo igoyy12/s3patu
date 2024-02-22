@@ -11,7 +11,7 @@ const Footer = () => {
             <IoLogoWhatsapp className="  inline-block text-4xl align-middle" />
             <div className="flex flex-col ">
               <span>Whatsapp kami</span>
-              <span>0816 4123 5669</span>
+              <span>0895 0830 6786</span>
             </div>
           </div>
           <div className="flex  gap-2 ">

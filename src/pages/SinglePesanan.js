@@ -32,7 +32,6 @@ const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
         )} */}
         <div className="flex  w-full ">
           <div className="w-[80%]">
-            <h3 className="font-semibold text-xl">{`Nama : ${pesan.nama}`}</h3>
             <h1 className="font-semibold xl:text-md md:text-md">{`Jenis Sepatu : ${pesan.jenis}`}</h1>
 
             <p className="italic"> {`Keluhan : ${pesan.catatan} `}</p>

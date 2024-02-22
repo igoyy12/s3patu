@@ -28,28 +28,7 @@ const SingleService = () => {
             </h1>
 
             <form className="mt-6">
-              <div className="mb-2">
-                <label>
-                  <span className="text-gray-700">Nama Lengkap</span>
-                  <input
-                    type="text"
-                    name="name"
-                    className="
-
-            w-full
-            block px-16 py-2 mt-2
-            border-black border-[1px]
-            rounded-md
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
-                    placeholder="Jonn Rahmat"
-                  />
-                </label>
-              </div>
+              
               <div className="mb-2">
                 <label>
                   <span className="text-gray-700">Jenis Sepatu</span>
@@ -135,7 +114,90 @@ const SingleService = () => {
       ) : (
         //RECOMNDED FALSE
 
-        <div>Tidak Recomend</div>
+        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
+          <div className="relative w-full p-6 m-auto bg-white rounded-md shadow-xl  ring-1 ring-black  lg:max-w-xl">
+            <h1 className="text-2xl font-semibold text-center text-black underline uppercase ">
+              {details.title}
+            </h1>
+
+            <form className="mt-6">
+              
+              <div className="mb-2">
+                <label>
+                  <span className="text-gray-700">Jenis Sepatu</span>
+                  <input
+                    name="jenis sepatu"
+                    type="text"
+                    className="
+            block
+            w-full
+            mt-2 px-16 py-2
+            border-black border-[1px]
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                    placeholder="kulit , sneakers , etc"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mb-2">
+                <label>
+                  <span class="text-gray-700">Keluhan</span>
+                  <textarea
+                    name="message"
+                    className="
+            block
+            w-full
+            mt-2 px-16 py-8
+            border-black border-[1px]
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                    rows="5"
+                  ></textarea>
+                </label>
+              </div>
+
+              <div class="mb-6"></div>
+              <div className="mt-6 flex items-center justify-between gap-x-6">
+                <div className="w-58 flex items-center justify-between rounded-md text-gray-500 gap-4 border p-3">
+                  <p className="text-sm">Jumlah Sepatu</p>
+                  <div className="flex items-center gap-4 text-sm font-semibold">
+                    <button
+                      onClick={kurangClick}
+                      className=" border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                    >
+                      -
+                    </button>
+                    <span>{jumlah}</span>
+                    <button
+                      onClick={tambahClick}
+                      className="border  h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="rounded-md bg-[#272829] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-400 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-700"
+                >
+                  Tambahkan ke Pesanan
+                </button>
+              </div>
+              
+            </form>
+          </div>
+        </div>
       )}
       <div className="flex justify-between p-8 ">
         <Link to="/">
