@@ -1,17 +1,18 @@
-import React, {} from 'react';
-
-// import ProfileAdmin from '../components/ProfileAdmin';
+import React, { useState, useEffect } from 'react';
 
 
+const Admin = ({ repair }) => {
 
- // Import your Dashboard component
+  console.log(repair[0].jenis_sepatu)
 
-const Admin = () => {
-
-  return ( 
-  <div className='bg-red-400'>
-    <h1>  Kamu sedang ada di halaman Admin  </h1>
-  </div>
+  return (
+    <div className='bg-red-400 w-full'>
+      {/* <h1>
+        {repair[0].jenis_sepatu}
+        {repair[0].keluhan}
+        {repair[0].jumlah_sepatu}
+      </h1> */}
+    </div>
   );
 };
 

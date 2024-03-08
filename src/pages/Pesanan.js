@@ -1,10 +1,15 @@
 import React from "react";
-import SinglePesanan from "./SinglePesanan";
+import SinglePesanan from "./Cleaning";
 import { Link } from "react-router-dom";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import Cleaning from "./Cleaning";
+import Repair from "./Repair";
+import fullService from "./fullService";
 
-const Pesanan = ({ pesanan, onDelete }) => {
-  console.log(pesanan);
+
+
+const Pesanan = ({ cleaning , fullService, repair, onDelete }) => {
+ 
   return (
     <div className=" h-auto  overflow-hidden  flex flex-col items-center justify-center ">
       <div className="flex flex-col w-full h-full px-[30vh]  gap-10 items-center justify-between  pt-5">
@@ -13,8 +18,14 @@ const Pesanan = ({ pesanan, onDelete }) => {
             <h1 className="text-4xl  ">Daftar Pesanan</h1>
           </div>
 
-          {pesanan.map((pesan) => (
-            <SinglePesanan key={pesan.id} pesan={pesan} onDelete={onDelete} />
+          {cleaning.map((pesan) => (
+            <Cleaning key={cleaning.id} cleaning={cleaning} onDelete={onDelete} />
+          ))}
+          {repair.map((pesan) => (
+            <Repair key={repair.id} repair={repair} onDelete={onDelete} />
+          ))}
+          {fullService.map((fullser) => (
+            <fullService key={fullser.id} fullService={fullser} onDelete={onDelete} />
           ))}
         </div>
 

@@ -1,9 +1,14 @@
 import React from "react";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { useState } from "react";
+import { FaRegEdit } from "react-icons/fa";
 
-const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
+const Repair = ({ repair, onDelete, onToggle, select }) => {
+  const [editing, setEditing] = useState(false)
+
+
   const [isHovering, setIsHovering] = useState(false);
+
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -13,7 +18,7 @@ const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
     setIsHovering(false);
   };
 
-  // const totalHarga = pesan.totalBaju + newPrice
+  // const totalHarga = cleaning.totalBaju + newPrice
 
   console.log(select);
 
@@ -23,7 +28,7 @@ const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
         className="flex flex-row cursor-pointer w-full gap-8 items-center  "
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        onDoubleClick={() => onToggle(pesan.id)}
+        onDoubleClick={() => onToggle(repair[0].id)}
       >
         {/* {select ? (
           <div className=" h-[20px] w-[20px] rounded-full border-[2px] bg-green-700 border-black "></div>
@@ -32,19 +37,33 @@ const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
         )} */}
         <div className="flex  w-full ">
           <div className="w-[80%]">
-            <h1 className="font-semibold xl:text-md md:text-md">{`Jenis Sepatu : ${pesan.jenis}`}</h1>
+            <h1 className="font-semibold xl:text-md md:text-md">{`Jenis Sepatu : ${repair[0].jenis_sepatu}`}</h1>
 
-            <p className="italic"> {`Keluhan : ${pesan.catatan} `}</p>
-            <h3 className="font-semibold">{`Total Baju : ${pesan.totalBaju}`}</h3>
+            <p className="italic"> {`Keluhan : ${repair[0].keluhan} `}</p>
+            <h3 className="font-semibold">{`Total Baju : ${repair[0].jumlah_sepatu}`}</h3>
           </div>
-          <div className="w-[20%] flex items-center justify-center">
+          <div className="flex flex-col  w-[20%]  items-end ">
+          <div className=" flex items-center justify-center">
             {isHovering && (
               <RiDeleteBin2Line
-                className="text-black text-3xl duration-300 cursor-pointer"
-                onClick={() => onDelete(pesan.id)}
+                className="text-black text-3xl duration-300 h-[40px] cursor-pointer"
+                onClick={() => onDelete(repair.id)}
               />
             )}
           </div>
+          <div className="  flex items-center justify-center">
+            {isHovering && (
+              <FaRegEdit 
+                className="text-black text-3xl duration-300 h-[23px] cursor-pointer"
+                onClick={() => onDelete(repair.id)}
+              />
+            )}
+          </div>
+          
+          </div>
+          
+          
+          
         </div>
       </div>
 
@@ -56,4 +75,4 @@ const SinglePesanan = ({ pesan, onDelete, onToggle, select }) => {
   );
 };
 
-export default SinglePesanan;
+export default Repair;

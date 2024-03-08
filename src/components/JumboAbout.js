@@ -2,7 +2,7 @@ import React from "react";
 
 const JumboAbout = () => {
   return (
-    <div className="flex flex-col justify-center align-middle items-center  pt-10 ">
+    <div className="flex flex-col justify-center  align-middle items-center  pt-10 ">
       <div className="flex flex-col gap-3 m-5  ">
         <h1 className=" text-xl font-bold font-fontA text-center">
           Kenapa Harus Laundry sepatu di Sepatuku?
@@ -71,11 +71,11 @@ const JumboAbout = () => {
         </div>
       </div>
 
-      <div className="absolute left-0 right-0   mx-auto  bottom-[50vh] sm:top-[40vh] flex border-[2px]  border-gray-500  rounded-full h-[55vh] w-[55vh]  items-center text-center align-center justify-center self-center  ">
+      <div className="absolute left-0 right-0   mx-auto  bottom-[50vh] sm:top-[40vh] flex border-[2px]  border-gray-500  rounded-full h-[55vh] w-[55vh]  items-center text-center align-center justify-center   ">
         <img
           src="./assets/spatu.png"
           alt="imgJumbo"
-          className="h-[50vh] w-[50vh] rounded-[50%]  object-cover items-center self-center image-center   "
+          className="h-[50vh] w-[50vh] rounded-[50%]   object-cover items-center self-center image-center   "
         />
       </div>
     </div>

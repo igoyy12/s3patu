@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import fetchTable from "../Api/Api";
+
 
 const LayananKamiCard = ({ layanan }) => {
+
   const navigate = useNavigate();
   const id = layanan.title;
   const idString = (id) => {

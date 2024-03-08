@@ -3,14 +3,28 @@ import { useLocation } from "react-router-dom";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const SingleService = () => {
+const SingleService = ({ createFullService }) => {
   const [details, setDetails] = useState({});
-
+  const [jenis, setJenis]= useState("")
+  const [keluhan, setKeluhan] = useState("")
   let [jumlah, setJumlah] = useState(1);
+
+  console.log(jenis)
+  console.log(keluhan)
+  console.log(jumlah)
   const location = useLocation();
+  // useEffect(() => {
+  //   setDetails(location.state.item);
+  // }, [location.state.item]);
+  
+  
+  
   useEffect(() => {
-    setDetails(location.state.item);
-  }, [location.state.item]);
+    if (location.state && location.state.item) {
+      setDetails(location.state.item);
+    }
+  }, [location.state]);
+  
 
   const kurangClick = () => {
     setJumlah(jumlah === 1 ? (jumlah = 1) : jumlah - 1);
@@ -27,15 +41,15 @@ const SingleService = () => {
               {details.title}
             </h1>
 
-            <form className="mt-6">
+            <form className="mt-6 ">
               
               <div className="mb-2">
-                <label>
+                <label >
                   <span className="text-gray-700">Jenis Sepatu</span>
                   <input
                     name="jenis sepatu"
                     type="text"
-                    className="
+                    className=" 
             block
             w-full
             mt-2 px-16 py-2
@@ -48,6 +62,7 @@ const SingleService = () => {
             focus:ring-opacity-50
           "
                     placeholder="kulit , sneakers , etc"
+                    onChange={(e) => setJenis(e.target.value)}
                     required
                   />
                 </label>
@@ -57,19 +72,9 @@ const SingleService = () => {
                   <span class="text-gray-700">Keluhan</span>
                   <textarea
                     name="message"
-                    className="
-            block
-            w-full
-            mt-2 px-16 py-8
-            border-black border-[1px]
-            rounded-md
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
-                    rows="5"
+                    className="block w-full mt-2 px-16 py-8 border-black border-[1px] rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                    required
+                    rows="5" onChange={(e) => setKeluhan(e.target.value)}
                   ></textarea>
                 </label>
               </div>
@@ -82,6 +87,7 @@ const SingleService = () => {
                     <button
                       onClick={kurangClick}
                       className=" border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                      onChange={(e) => setJumlah(e.setJumlah.target)}
                     >
                       -
                     </button>
@@ -89,6 +95,7 @@ const SingleService = () => {
                     <button
                       onClick={tambahClick}
                       className="border  h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                      onChange={(e) => setJumlah(e.setJumlah.target)}
                     >
                       +
                     </button>
@@ -190,6 +197,7 @@ const SingleService = () => {
                 <button
                   type="submit"
                   className="rounded-md bg-[#272829] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-400 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-700"
+                  onClick={() => createFullService()}
                 >
                   Tambahkan ke Pesanan
                 </button>
@@ -200,14 +208,14 @@ const SingleService = () => {
         </div>
       )}
       <div className="flex justify-between p-8 ">
-        <Link to="/">
+        <Link to="/beranda">
           <div className="flex justify-center items-center cursor-pointer align-middle gap-2 hover:text-gray-500 ">
             <BsArrowLeft />
             <h3>Kembali ke Beranda</h3>
           </div>
         </Link>
 
-        <Link to="/pembayaran">
+        <Link to="/pesanan">
           <div className="flex justify-center items-center cursor-pointer align-middle gap-2 hover:text-gray-500 ">
             <h3>Lanjut ke Pesanan</h3>
             <BsArrowRight />

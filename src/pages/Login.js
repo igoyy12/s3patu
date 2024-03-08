@@ -20,12 +20,12 @@ const Login = () => {
     }
   };
 
-  const [admin, setAdmin] = useState(true)
+  const [admin, setAdmin] = useState(false)
 
 
   useEffect(() => {
     // Set admin to true if user.displayName is truthy
-    setAdmin(!!user?.displayName);
+    setAdmin(!user?.displayName);
   }, [user?.displayName]);
   
   

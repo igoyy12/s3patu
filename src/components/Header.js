@@ -5,7 +5,7 @@ import { UserAuth } from "../context/AuthContext";
 
 
 const Header = () => {
-  const {user, logOut} = UserAuth()
+  const {user} = UserAuth()
 
   console.log(user)
   return (
